@@ -1,15 +1,10 @@
-Module SFTP
-====================
-
-This module allows you to send files through SFTP
-
-## Name
-
-The module name is `mod-sftp`.
+# About Module SFTP
+* Licence : [AGPL v3](http://www.gnu.org/licenses/agpl.txt) - Copyright Régions Ile De France et Nouvelle Aquitaine, Département de Seine et Marne et ville de Paris
+* Financer : Régions Ile De France et Nouvelle Aquitaine, Département de Seine et Marne et ville de Paris
+* Developer : CGI
+* Description : This module allows you to send files through SFTP.
 
 ## Configuration
-
-
 The mod-sftp module takes the following configuration:
 
 	{
