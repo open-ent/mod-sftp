@@ -1,5 +1,5 @@
 # About Module SFTP
-* Licence : [AGPL v3](http://www.gnu.org/licenses/agpl.txt) - Copyright Régions Ile De France et Nouvelle Aquitaine, Département de Seine et Marne et ville de Paris
+* Licence : [Apache2](https://www.apache.org/licenses/LICENSE-2.0.txt) - Copyright Régions Ile De France et Nouvelle Aquitaine, Département de Seine et Marne et ville de Paris
 * Financer : Régions Ile De France et Nouvelle Aquitaine, Département de Seine et Marne et ville de Paris
 * Developer : CGI
 * Description : This module allows you to send files through SFTP.
