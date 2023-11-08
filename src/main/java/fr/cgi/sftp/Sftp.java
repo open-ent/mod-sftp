@@ -16,6 +16,7 @@
 
 package fr.cgi.sftp;
 
+import io.vertx.core.Promise;
 import io.vertx.core.logging.LoggerFactory;
 import net.schmizz.sshj.SSHClient;
 import net.schmizz.sshj.sftp.SFTPClient;
@@ -47,8 +48,8 @@ public class Sftp extends BusModBase implements Handler<Message<JsonObject>> {
 
 
 	@Override
-	public void start() {
-		super.start();
+	public void start(final Promise<Void> promiseStart) throws Exception {
+		super.start(promiseStart);
 		JsonObject conf = config;
 		String address = conf.getString("address", "sftp");
         eb.consumer(address, this);
