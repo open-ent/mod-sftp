@@ -11,10 +11,10 @@
 
     <groupId>fr.cgi</groupId>
     <artifactId>mod-sftp</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <version>2.1.2</version>
 
     <properties>
-        <webUtilsVersion>3.3-SNAPSHOT</webUtilsVersion>
+        <webUtilsVersion>3.3.1</webUtilsVersion>
         <sshjVersion>0.40.0</sshjVersion>
     </properties>
 
