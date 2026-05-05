@@ -12,7 +12,7 @@
   <artifactId>mod-sftp</artifactId>
   <version>2.1-separation-SNAPSHOT</version>
   <properties>
-    <webUtilsVersion>3.3-SNAPSHOT</webUtilsVersion>
+    <webUtilsVersion>3.3-separation-SNAPSHOT</webUtilsVersion>
     <sshjVersion>0.40.0</sshjVersion>
   </properties>
   <scm>
