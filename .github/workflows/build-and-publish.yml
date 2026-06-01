@@ -47,7 +47,17 @@ jobs:
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           FAT_JAR=$(ls target/*-fat.jar 2>/dev/null | head -1)
           if [ -z "${FAT_JAR}" ]; then echo "::error::Fat JAR not found"; exit 1; fi
-          mvn deploy:deploy-file -Dfile="${FAT_JAR}" -DgroupId="${GROUP_ID}" -DartifactId="${ARTIFACT_ID}" -Dversion="${VERSION}" -Dclassifier=fat -Dpackaging=jar -DrepositoryId=github -Durl="https://maven.pkg.github.com/${{ github.repository }}" -B
+          set +e
+          OUT=$(mvn deploy:deploy-file -Dfile="${FAT_JAR}" -DgroupId="${GROUP_ID}" -DartifactId="${ARTIFACT_ID}" -Dversion="${VERSION}" -Dclassifier=fat -Dpackaging=jar -DrepositoryId=github -Durl="https://maven.pkg.github.com/${{ github.repository }}" -B 2>&1)
+          CODE=$?
+          echo "$OUT"
+          if [ $CODE -ne 0 ]; then
+            if echo "$OUT" | grep -q "status code: 409"; then
+              echo "::warning::${GROUP_ID}:${ARTIFACT_ID}:${VERSION} already published — skipping"
+            else
+              exit $CODE
+            fi
+          fi
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
